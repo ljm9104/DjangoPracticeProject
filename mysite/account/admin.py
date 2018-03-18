@@ -1,0 +1,12 @@
+from django.contrib import admin
+from .models import UserProfile
+
+
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'birth', 'phone')
+    list_filter = ("phone",)
+
+
+# 注册到后台
+admin.site.register(UserProfile, UserProfileAdmin)
+
